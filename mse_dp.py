@@ -15,7 +15,7 @@ from scipy.interpolate import griddata
 
 def mse_dp(N, pmf, t1, tM, b_adc, sigma_adc, delta_imc):
     # Computes the mean squared computational error (MSE_dp) due to uniform quantization of IMC pre-ADC output
-    # Returns the mse_dp and a boolean indicating valid computation
+    # Returns the MSE_dp and a boolean indicating valid computation
 
     M = 2**b_adc - 1
     v_lsb = (tM - t1) / (M - 1)
