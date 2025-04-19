@@ -242,7 +242,7 @@ class qr_bpbs_dp_unit:
         pmf = np.zeros(N+1)
         for i in range(N+1):
             pmf[i] = scp.special.comb(N,i)*(0.25**i)*(1-0.25)**(N-i)
-        t_opt, msce = cactus(N, pmf, b_adc, self.sigma_adc, self.delta_imc)
+        t_opt, msce, csnr = cactus(N, pmf, b_adc, self.sigma_adc, self.delta_imc)
         for i in range(self.n_adc):
             self.adc_array[i].b_adc = b_adc
             self.adc_array[i].M = 2**self.adc_array[i].b_adc -1
@@ -387,15 +387,15 @@ def plot_results(dp_dim, sigma_adc,date):
 if __name__ == '__main__':
     # Example usage
 
-    run_simulation(dp_dim=128, sigma_adc=0.0005, npoints=500000, date= 325)
-    run_simulation(dp_dim=128, sigma_adc=0.00075, npoints=500000, date= 325)
-    run_simulation(dp_dim=128, sigma_adc=0.001, npoints=500000, date= 325)
-    run_simulation(dp_dim=256, sigma_adc=0.0005, npoints=500000, date= 325)
-    run_simulation(dp_dim=256, sigma_adc=0.00075, npoints=500000, date= 325)
-    run_simulation(dp_dim=256, sigma_adc=0.001, npoints=500000, date= 325)
-    run_simulation(dp_dim=512, sigma_adc=0.0005, npoints=500000, date= 325)
-    run_simulation(dp_dim=512, sigma_adc=0.00075, npoints=500000, date= 325)
-    run_simulation(dp_dim=512, sigma_adc=0.001, npoints=500000, date= 325)
+    run_simulation(dp_dim=128, sigma_adc=0.0005, npoints=500000, date= 419)
+    run_simulation(dp_dim=128, sigma_adc=0.00075, npoints=500000, date= 419)
+    run_simulation(dp_dim=128, sigma_adc=0.001, npoints=500000, date= 419)
+    run_simulation(dp_dim=256, sigma_adc=0.0005, npoints=500000, date= 419)
+    run_simulation(dp_dim=256, sigma_adc=0.00075, npoints=500000, date= 419)
+    run_simulation(dp_dim=256, sigma_adc=0.001, npoints=500000, date= 419)
+    # run_simulation(dp_dim=512, sigma_adc=0.0005, npoints=500000, date= 325)
+    # run_simulation(dp_dim=512, sigma_adc=0.00075, npoints=500000, date= 325)
+    # run_simulation(dp_dim=512, sigma_adc=0.001, npoints=500000, date= 325)
 
     # plot_results(dp_dim=128, sigma_adc=0.0005, date= 325)
     # plot_results(dp_dim=128, sigma_adc=0.00075, date= 325)
