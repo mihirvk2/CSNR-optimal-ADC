@@ -233,7 +233,7 @@ class qr_bpbs_dp_unit:
         # Assuming binomial pmf
         N = self.w_array.shape[0]
         p = 0.25
-        t_vec, r_vec = lloyd_max_gaussian(N, p, b_adc, self.sigma_adc, self.delta_imc, niter)
+        t_vec, r_vec = lloyd_max_gaussian(N, p, b_adc, self.delta_imc, niter)
         self.adc_array = [non_uniform_adc_imc(b_adc=b_adc, t_vec = t_vec, r_vec = r_vec, sigma_adc=self.sigma_adc, v_cl= self.v_cl) for i in range(self.n_adc)]
 
     def clip_adc_cactus(self, b_adc):
