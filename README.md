@@ -1,3 +1,1 @@
-# ICCAD-2025
-
-Supplementary material for ICCAD 2025 submission "Compute SNR-optimal Analog-to-digital Converters for Analog In-Memory Computing"
+Supplementary material for: M. Kavishwar and N. Shanbhag, "Compute SNR-optimal Analog-to-digital Converters for Analog In-Memory Computing".
